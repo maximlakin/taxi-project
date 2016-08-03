@@ -1,38 +1,42 @@
 <%= render "shared/nav"%>
 
-<div class="container" style="font-size: 16px;">
+<div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h1>New York City</h1>
-            <div class="row">
 
+            <div class="row">
+                <div class="col-xs-3">
+                    <%= image_tag "taxi_pickups_map_hires.png", class: "img-responsive" %>
+                </div>
+                <div class="col-xs-9" style="font-weight:200">
+                    <h1>New York City</h1>
+                    <hr>
+                    <p style="font-size: 22px;line-height:1.6em">Whether you're starting a car sharing company or a local government, understanding the city trafic is valuable to achieving your goals.  Geospacial trafic data is easy to collect and has a very rich story to tell</p>
+                    <ul>
+                        <li>What's the general traffic pattern?</li>
+                        <li>How will weather effect delays?</li>
+                        <li>What does a typical commutor pay and where do they go?</li>
+                        <li>Can marketers learn anything about the distribution of spenders?</li>
+                        <li>What can we learn about nightlife, shopping, entertainment, travel etc?</li>
+                        <li>Can we classify NYC tourist/locals data?</li>
+                        <li>Can companies like uber/tesla use this tourist/locals/shpping etc classification?</li>
+                    </ul>
+                </div>
             </div>
+            <h3>Introduction</h3>
+            <p style="font-weight:200;font-size:22px;margin-top:20px;margin-bottom:20px;">This project explores the NYC taxi pickups and dropoffs dataset (realeased by the <a href="http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml">Taxi and Limousine Commision)</a></p>
             <div class="row">
                 <div class="col-xs-12">
                     <div>
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Overview</a></li>
-                            <li role="presentation"><a href="#csv-data" aria-controls="profile" role="tab" data-toggle="tab">Data Sample</a></li>
+                            <li role="presentation" class="active"><a href="#csv-data" aria-controls="csv-data" role="tab" data-toggle="tab">Data</a></li>
                             <li role="presentation"><a href="#time-series" aria-controls="profile" role="tab" data-toggle="tab">Time Series</a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="home">
-                                <div class="col-xs-12">
-                                    <p>Whether you're starting a car sharing company or a local government, understanding the city trafic is valuable to achieving your goals.  Geospacial trafic data is easy to collect and has a very rich story to tell:</p>
-                                    <ul>
-                                        <li>What's the general traffic pattern?</li>
-                                        <li>How will weather effect delays?</li>
-                                        <li>What does a typical commutor pay and where do they go?</li>
-                                        <li>Can marketers learn anything about the distribution of spenders?</li>
-                                        <li>What can we learn about nightlife, shopping, entertainment, travel etc?</li>
-                                        <li>Can we classify NYC tourist/locals data?</li>
-                                        <li>Can companies like uber/tesla use this tourist/locals/shpping etc classification?</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="csv-data">
+                            <div role="tabpanel" class="tab-pane active" id="csv-data">
+                                <br>
                                 <div style="width:100%; overflow-x: scroll">
                                     <%= render "sample_data_table"%>
                                 </div>
@@ -44,9 +48,9 @@
                     </div>
                 </div>
             </div>
-            <h3>Analysis</h3>
+            <h3>Seasonality vs Temporality</h3>
+            <p style="font-weight:200;font-size:22px;margin-top:20px;margin-bottom:20px;">There's a clear temporal pattern as pickups cluster around Manhattan during the day and dropoffs spread out after midnight.  Seasonality doesn't seem to have a big effect, except for parts of Brooklyn Heights and a few other places.</p>
             <div class="row">
-
                 <div class="col-xs-6">
                     <%= image_tag "summer.gif", class: "img-responsive" %>
                 </div>
@@ -54,6 +58,9 @@
                     <%= image_tag "winter.gif", class: "img-responsive" %>
                 </div>
             </div>
+            <h3>Geospacial Analysis</h3>
+            <p style="font-weight:200;font-size:22px;margin-top:20px;margin-bottom:20px;">The plot on the left shows average cab ride speeds by neighborhood.  Most of Manhattan and Brooklyn trips are a lot slower compared to the outer areas.  On the other hand the grid-like layout makes navigation easier, as can be seen from the path deviation plot on the right which shows the ratio of the trip distance to the physical distance between pickup and drop off location.</p>
+
             <div class="row">
                 <div class="col-xs-6">
                     <%= image_tag "taxi_pickups_stats.png", class: "img-responsive" %>
@@ -62,27 +69,15 @@
                     <%= image_tag "taxi_pickups_stats2.png", class: "img-responsive" %>
                 </div>
             </div>
-            <h3>Analysis</h3>
-            <div class="row">
-                <div class="col-xs-4">
-                    <%= image_tag "taxi_pickups_map_hires.png", class: "img-responsive" %>
-                </div>
-                <div class="col-xs-8">
-                    <h3>Data Features</h3>
-                    <h3>Distance/time</h3>
-                    <h3>Distance-geodist</h3>
-                    <h3>Fastest/Outliers</h3>
-                    <h3>Predicting Holidays & events</h3>
-                    <p>Time series analysis</p>
-                    <h3>Small Worlds</h3>
-                    <p>powerlaw</p>
-                    <p>It's easy for companies to collect geospacial data</p>
-                    <p>Temporality, seasonality</p>
-                </div>
-            </div>
-
-
-
+            <h3>Future Analysis</h3>
+            <p style="font-weight:200;font-size:22px;margin-top:20px;margin-bottom:20px;">There are a lot of places to go from here and the questions we can answer are far from over.  Some of the next steps would be</p>
+            <ul style="font-weight:200;font-size:22px;margin-top:20px;margin-bottom:20px;">
+                <li>Weather effects on traffic</li>
+                <li>General trip statistics and distributions</li>
+                <li>Weekend clusters of possible spenders</li>
+                <li>Nightlife and entertainment analysis using Yelp and Foursquare APIs</li>
+                <li>Various other explorative analysis: small worlds, closed loops, clustering</li>
+            </ul>
         </div>
     </div>
 </div>
