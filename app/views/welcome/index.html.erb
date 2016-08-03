@@ -3,41 +3,69 @@
 <div class="container" style="font-size: 16px;">
     <div class="row">
         <div class="col-xs-12">
-            <h1>NYC Taxi Trips Analysis</h1>
+            <h1>New York City</h1>
             <div class="row">
-                <div class="col-xs-4">
-                    <p>This is an analysis of taxi trips around NYC and the surrounding neighborhoods.  It's an interesting dataset because it's made of pickup location, drop off location, distance, and the trip amount, yet the geospacial and time dependance has a rich story to tell.</p>
-                </div>
-                <div class="col-xs-8">
+                <div class="col-xs-12">
+                    <p>Whether you're starting a car sharing company or a local government, understanding the city trafic is valuable to achieving your goals.  Geospacial trafic data is easy to collect and has a very rich story to tell:</p>
                     <ul>
-                        <li>What is the NYC traffic situation?</li>
-                        <li>What does the data show about the distribution of money?</li>
-                        <li>What does it tell us about night spots, shopping, entertainment, travel etc?</li>
+                        <li>What's the general traffic pattern?</li>
+                        <li>How will weather effect delays?</li>
+                        <li>What does a typical commutor pay and where do they go?</li>
+                        <li>Can marketers learn anything about the distribution of spenders?</li>
+                        <li>What can we learn about nightlife, shopping, entertainment, travel etc?</li>
                         <li>Can we classify NYC tourist/locals data?</li>
                         <li>Can companies like uber/tesla use this tourist/locals/shpping etc classification?</li>
                     </ul>
                 </div>
             </div>
 
-            <h3>Data Features</h3>
             <div class="row">
-                <div class="col-xs-4">
-                    <%= image_tag "nyc.gif", class: "img-responsive" %>
+                <div class="col-xs-12">
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Overview</a></li>
+                            <li role="presentation"><a href="#csv-data" aria-controls="profile" role="tab" data-toggle="tab">CSV Data</a></li>
+                            <li role="presentation"><a href="#time-series" aria-controls="profile" role="tab" data-toggle="tab">Time Series</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <%= image_tag "nyc.gif", class: "img-responsive" %>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <%= image_tag "nyc.gif", class: "img-responsive" %>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <%= image_tag "nyc.gif", class: "img-responsive" %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="csv-data">
+                                <div style="width:100%; overflow-x: scroll">
+                                    <%= render "sample_data_table"%>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="time-series">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-4">
-                    <%= image_tag "nyc.gif", class: "img-responsive" %>
-                </div>
-                <div class="col-xs-4">
-                    <%= image_tag "nyc.gif", class: "img-responsive" %>
-                </div>
-
             </div>
+
+            <h3>Data Features</h3>
+
             <h3>Distance/time</h3>
             <h3>Distance-geodist</h3>
             <h3>Fastest/Outliers</h3>
             <h3>Predicting Holidays & events</h3>
-            <h3>Small Worlds</h3>
             <p>Time series analysis</p>
+            <h3>Small Worlds</h3>
+            <p>powerlaw</p>
+            <p>It's easy for companies to collect geospacial data</p>
+            <p>Temporality, seasonality</p>
         </div>
     </div>
 </div>
