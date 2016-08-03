@@ -1,34 +1,12 @@
-<nav class="navbar navbar-inverse" style="border-radius:0;">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">NYC Rides</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<%= render "shared/nav"%>
 
 <div class="container" style="font-size: 16px;">
     <div class="row">
         <div class="col-xs-12">
             <h1>NYC Taxi Trips Analysis</h1>
-            <p>This is an analysis of taxi trips around NYC and the surrounding neighborhoods.  It's an interesting dataset because it's made of pickup location, drop off location, distance, and the trip amount, yet the geospacial and time dependance has a rich story to tell.</p>
-            <h3>Data Features</h3>
             <div class="row">
                 <div class="col-xs-4">
-                    <%= image_tag "nyc.gif", class: "img-responsive" %>
+                    <p>This is an analysis of taxi trips around NYC and the surrounding neighborhoods.  It's an interesting dataset because it's made of pickup location, drop off location, distance, and the trip amount, yet the geospacial and time dependance has a rich story to tell.</p>
                 </div>
                 <div class="col-xs-8">
                     <ul>
@@ -40,6 +18,26 @@
                     </ul>
                 </div>
             </div>
+
+            <h3>Data Features</h3>
+            <div class="row">
+                <div class="col-xs-4">
+                    <%= image_tag "nyc.gif", class: "img-responsive" %>
+                </div>
+                <div class="col-xs-4">
+                    <%= image_tag "nyc.gif", class: "img-responsive" %>
+                </div>
+                <div class="col-xs-4">
+                    <%= image_tag "nyc.gif", class: "img-responsive" %>
+                </div>
+
+            </div>
+            <h3>Distance/time</h3>
+            <h3>Distance-geodist</h3>
+            <h3>Fastest/Outliers</h3>
+            <h3>Predicting Holidays & events</h3>
+            <h3>Small Worlds</h3>
+            <p>Time series analysis</p>
         </div>
     </div>
 </div>
